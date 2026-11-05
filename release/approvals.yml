@@ -1,3 +1,15 @@
-approvedBy: 
-reviewDate: 
-releaseManager: 
+release: v2.3.0
+environment: production
+approvedBy: Hardik Tailor
+reviewDate: 2026-11-04
+releaseManager: Hardik Tailor
+approval_gate: GitHub environment "production" (required reviewer before deploy job runs)
+checklist:
+  validation_stage_passed: true
+  versioned_image_built: true
+  smoke_test_passed: true
+  no_hardcoded_secrets: true
+  secrets_stored_in_github_environment: true
+  rollback_plan_reviewed: true
+  infrastructure_reviewed: true
+decision: approved

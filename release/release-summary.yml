@@ -1,5 +1,15 @@
-status: unknown
+status: ready-for-production
+product: OrderFlow
 environment: production
-version: latest
-approval: pending
-rollback: none
+version: v2.3.0
+git_tag: v2.3.0
+image: lab-app:v2.3.0
+infrastructure: kubernetes (3 replicas, rolling update)
+approval: required - GitHub environment "production"
+rollback: kubectl rollout undo -> v2.2.0 (scripts/rollback.sh)
+validation:
+  tests: passed
+  version_consistency: passed
+  secret_scan: passed
+  image_build: passed
+  smoke_test: passed
