@@ -11,15 +11,26 @@ A simple Node.js Express application.
 - `GET /health`
 
 ## Current Release
-v2.3.0
-Production Deployment
+
+| | |
+|---|---|
+| Version | **v2.3.0** |
+| Environment | production |
+| Image | `lab-app:v2.3.0` |
+| Status | Ready for production |
+
+Release documentation:
+- [Release Readiness Pack](docs/RELEASE_READINESS.md)
+- [Rollback plan](release/rollback.yml)
+- [Approvals](release/approvals.yml)
+- [Release summary](release/release-summary.yml)
 
 ## Getting Started
 
 ### Clone
 ```bash
-git clone https://github.com/kalvium-devops/release-readiness-lab.git
-cd release-readiness-lab
+git clone https://github.com/kalviumcommunity/release-readiness-labs.git
+cd release-readiness-labs
 ```
 
 ### Install

@@ -1,2 +1,14 @@
-rollback_strategy: 
-target_version: 
+rollback_strategy: kubernetes-rollout-undo
+current_version: v2.3.0
+target_version: v2.2.0
+script: scripts/rollback.sh
+command: ROLLBACK_VERSION=v2.2.0 ./scripts/rollback.sh
+max_rollback_time: 5m
+triggers:
+  - /health endpoint failing after deploy
+  - kubectl rollout status does not finish within 120s
+  - error rate or latency above normal after release
+verification:
+  - kubectl rollout status deployment/lab-app
+  - /health returns status ok and version 2.2.0
+owner: Hardik Tailor
